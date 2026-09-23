@@ -1,0 +1,26 @@
+# Set these paths to locally downloaded checkpoints before running answerers.
+environment_variables:
+  HDEA_QWEN3_MODEL: /path/to/Qwen3-VL-8B-Instruct
+  HDEA_INTERNVL3_MODEL: /path/to/InternVL3-8B-Instruct
+  HDEA_MPLUGOWL3_MODEL: /path/to/mPLUG-Owl3-7B-241101
+  HDEA_LLAVANEXT_ROOT: /path/to/LLaVA-NeXT
+  HDEA_LLAVANEXT_MODEL: /path/to/LLaVA-NeXT-Video-7B
+  HDEA_LLAVANEXT_SIGLIP: /path/to/siglip-so400m-patch14-384
+
+frozen_interfaces:
+  qwen3:
+    dtype: bfloat16
+    decision: restricted_option_token_logits
+  internvl3:
+    dtype: bfloat16
+    frame_resolution: 448x448
+    decision: next_option_token_logits
+  mplugowl3:
+    dtype: bfloat16
+    frame_resolution: 378x378
+    decision: first_option_token_logits
+  llavanext:
+    dtype: bfloat16
+    frame_resolution: 384x384
+    decision: final_state_option_logits
+

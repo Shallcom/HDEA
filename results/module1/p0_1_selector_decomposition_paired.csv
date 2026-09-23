@@ -1,0 +1,16 @@
+Dataset,Method A,Method A role,Method B,Method B role,Fixes,Losses,Net fixes,Exact McNemar p,Accuracy/M-AVG delta
+VideoMME,Uniform32,baseline,HDEA-Core32,evaluated_method,275,195,80,0.0002601923584538297,2.962962962962969
+VideoMME,AKS32,baseline,HDEA-Core32,evaluated_method,238,135,103,1.0725488617768005e-07,3.8148148148148167
+VideoMME,OptionPool32,baseline,HDEA-Core32,evaluated_method,222,175,47,0.020844933308257624,1.7407407407407476
+VideoMME,PairwisePointwise32,baseline,HDEA-Core32,evaluated_method,297,180,117,9.445592141481794e-08,4.333333333333336
+VideoMME,OptionPool32,baseline,PairwisePointwise32,evaluated_method,242,312,-70,0.0033365929914894402,-2.592592592592588
+LongVideoBench,Uniform32,baseline,HDEA-Core32,evaluated_method,153,68,85,1.0648479970261976e-08,6.357516828721025
+LongVideoBench,AKS32,baseline,HDEA-Core32,evaluated_method,124,84,40,0.006706296396435056,2.9917726252804755
+LongVideoBench,OptionPool32,baseline,HDEA-Core32,evaluated_method,87,81,6,0.6997974882614125,0.4487658937920713
+LongVideoBench,PairwisePointwise32,baseline,HDEA-Core32,evaluated_method,172,61,111,1.9887412894848556e-13,8.302169035153334
+LongVideoBench,OptionPool32,baseline,PairwisePointwise32,evaluated_method,83,188,-105,1.5795078391113198e-10,-7.853403141361262
+MLVU-Dev M-AVG,Uniform32,baseline,HDEA-Core32,evaluated_method,351,140,211,5.948511033001452e-22,9.666652272251554
+MLVU-Dev M-AVG,AKS32,baseline,HDEA-Core32,evaluated_method,149,87,62,6.552303801488519e-05,2.708569961714005
+MLVU-Dev M-AVG,OptionPool32,baseline,HDEA-Core32,evaluated_method,132,120,12,0.48842601828669646,0.3828420586469008
+MLVU-Dev M-AVG,PairwisePointwise32,baseline,HDEA-Core32,evaluated_method,352,126,226,8.968453362069383e-26,10.48134107776184
+MLVU-Dev M-AVG,OptionPool32,baseline,PairwisePointwise32,evaluated_method,161,375,-214,1.08655972097821e-20,-10.09849901911494

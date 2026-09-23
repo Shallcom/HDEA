@@ -1,0 +1,58 @@
+method: HDEA
+status: frozen
+seed: 20270827
+
+retrieval:
+  checkpoint: google/siglip-so400m-patch14-384
+  candidate_grid: deterministic_integer_1fps
+  generic_text: "Question: {question}"
+  candidate_text: "Candidate answer: {choice}. Question: {question}"
+
+module_i:
+  local_packet_size: 2
+  local_packet_stride: 2
+  packet_budget: 16
+  source_frame_budget: 32
+  leaf_threshold: 0.2
+  leaf_max_depth: 5
+  objective: unordered_candidate_pair_facility_coverage
+  tie_break:
+    - marginal_gain_rounded_7_decimals
+    - generic_relevance_rounded_7_decimals
+    - earlier_packet_id
+  short_video_fallback: all_available_candidate_frames
+
+module_ii:
+  residual_action_count: 8
+  frames_per_action: 4
+  control_action: minimum_value_then_earliest_index
+  e40_selected_actions: 2
+  e48_selected_actions: 4
+  nesting: E32_subset_E40_subset_E48
+  insufficient_residual_rule: stop_at_parent
+  readout: equal_weight_geometric_pool
+  answer_calls: 3
+
+evaluation:
+  datasets:
+    videomme:
+      questions: 2700
+      primary_metric: accuracy
+    longvideobench:
+      questions: 1337
+      primary_metric: accuracy
+    mlvu_dev:
+      questions: 2174
+      primary_metric: unweighted_seven_task_m_avg
+  cluster_bootstrap:
+    replicates: 10000
+    rng: PCG64
+    seed: 20270827
+    interval: 95_percentile
+    cluster: physical_video
+
+frozen_core_selection_set_hashes:
+  videomme: 659c8c9eb39814388c540c2d0e46dbeafa3b9eae86248649c6abec55d6d0f690
+  longvideobench: f97fc466ff43d4d188d4904022e981aec0f79fa60520d7d276dc824415c55817
+  mlvu_dev: 0954cf4e8eb313aed749272d8a76a5e181a6aa5e789b10ae3d6db429e1382139
+
