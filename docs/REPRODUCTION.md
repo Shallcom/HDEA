@@ -5,8 +5,8 @@
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e '.[retrieval,analysis,dev]'
-pytest -q
+pip install numpy torch transformers pillow pandas scipy pyarrow pytest
+PYTHONPATH=src pytest -q
 ```
 
 ## 2. Prepare one retrieval cache
@@ -70,4 +70,3 @@ weights, or large feature caches. Download VideoMME, LongVideoBench, and MLVU
 from their official sources and comply with their licences. Aggregate frozen
 statistics are provided under `results/`; selection/prediction artifacts can
 be released separately if their dataset terms permit redistribution.
-

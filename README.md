@@ -22,8 +22,8 @@ caches, or historical failed experiments.
 ## Quick start
 
 ```bash
-pip install -e '.[dev]'
-pytest -q
+pip install numpy pytest
+PYTHONPATH=src pytest -q
 ```
 
 ```python
