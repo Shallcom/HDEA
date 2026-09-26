@@ -19,12 +19,11 @@ seven-task M-AVG.
 | Qwen3-VL-8B | 67.44 | 65.22 | 74.25 |
 | InternVL3-8B | 66.33 | 64.47 | 73.50 |
 | mPLUG-Owl3-7B | 55.96 | 58.34 | 65.22 |
-| LLaVA-NeXT-Video-7B | 62.48 | 60.88 | 68.65 |
+| LLaVA-Video-7B | 62.48 | 60.88 | 68.65 |
 
 The exact HDEA system is above matched Uniform32 in all 12 model-dataset
-cells. Module II is not monotonically better than every single branch: Full
+cells. Stage 2 is not monotonically better than every single branch: Full
 versus Core has 11 positive and one negative cell, while Full versus E48 has
 four positive, one tie, and seven negative cells. The complete CSVs and
 cluster-bootstrap summaries are released with the code to preserve these
 boundaries rather than report only favorable comparisons.
-

@@ -152,7 +152,7 @@ def build_nested_views(
 
     windows = action_windows(residual, window_count=8, frames_per_window=4)
     if generic_text_embedding is None:
-        # Only candidate-conditioned scores are used by Module II.  Supply a
+        # Only candidate-conditioned scores are used by Stage 2.  Supply a
         # harmless placeholder to reuse the audited cosine-scoring function.
         generic_text_embedding = np.zeros(embeddings.shape[1], dtype=np.float32)
     _, option_scores = retrieval_scores(
@@ -185,4 +185,3 @@ def build_nested_views(
         tuple(ranked),
         None,
     )
-

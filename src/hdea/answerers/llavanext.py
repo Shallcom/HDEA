@@ -1,4 +1,4 @@
-"""Deterministic restricted-option scoring for frozen LLaVA-NeXT-Video.
+"""Deterministic restricted-option scoring for frozen LLaVA-Video.
 
 The scorer preserves the public LLaVA-NeXT Qwen conversation template,
 ``<image>`` placeholder, SigLIP processor, and native ``video`` modality.  It
@@ -105,7 +105,7 @@ def _install_llava_imports_and_local_siglip() -> None:
 
 
 class LLaVANeXTMCQScorer:
-    """One-forward restricted next-token scorer for LLaVA-NeXT-Video-7B."""
+    """One-forward restricted next-token scorer for LLaVA-Video-7B."""
 
     def __init__(
         self,

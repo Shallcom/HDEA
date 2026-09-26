@@ -4,12 +4,12 @@ Official code release for **HDEA: Hypothesis-Discriminative Evidence
 Acquisition for Long-Video Question Answering**.
 
 HDEA is a training-free, answer-model-agnostic method that constructs visual
-context for frozen multiple-choice Video-MLLMs. It has two modules:
+context for frozen multiple-choice Video-MLLMs. It has two stages:
 
-1. **Hypothesis-Discriminative Core Acquisition** selects a 32-frame evidence
+1. **Stage 1: Broad Competition Coverage** selects a 32-frame evidence
    portfolio by covering complementary candidate-answer distinctions rather
    than independently ranking frames.
-2. **Core-Preserving Nested Refinement** uses the core answer posterior to
+2. **Stage 2: Focused Competition Resolution** uses the core answer posterior to
    rank fixed residual evidence groups, constructs nested E40/E48 views, and
    applies a fixed geometric answer readout.
 
@@ -63,7 +63,7 @@ The full protocol and selection-set hashes are in
 | Qwen3-VL-8B | **67.44** | **65.22** | **74.25** |
 | InternVL3-8B | **66.33** | **64.47** | **73.50** |
 | mPLUG-Owl3-7B | **55.96** | **58.34** | **65.22** |
-| LLaVA-NeXT-Video-7B | **62.48** | **60.88** | **68.65** |
+| LLaVA-Video-7B | **62.48** | **60.88** | **68.65** |
 
 VideoMME and LongVideoBench report accuracy. MLVU reports its official
 unweighted seven-task M-AVG. See [docs/RESULTS.md](docs/RESULTS.md) and the CSV
@@ -73,12 +73,12 @@ physical-video-cluster bootstrap intervals.
 ## Repository layout
 
 ```text
-src/hdea/                 Frozen Module-I/II algorithms and answerer adapters
+src/hdea/                 Frozen two-stage algorithms and answerer adapters
 scripts/                  Portable manifest, refinement, fusion, and audit CLIs
 configs/                  Frozen method protocol and model-path template
 tests/                    Determinism, invariance, nesting, and regression tests
-results/module1/          Selector decomposition and cross-model Core tables
-results/module2/          Exact-common-parent Module-II tables
+results/module1/          Stage-1 selector decomposition and Core-only tables
+results/module2/          Exact-common-parent Stage-2 and final-HDEA tables
 results/audits/           Final integrity audit summaries
 docs/                     Method, reproduction, and result documentation
 ```

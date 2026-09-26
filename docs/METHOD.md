@@ -2,9 +2,9 @@
 
 HDEA is a training-free evidence acquisition method for long-video
 multiple-choice question answering. The released implementation contains the
-two modules evaluated in the paper.
+two stages evaluated in the paper.
 
-## Module I: Hypothesis-Discriminative Core Acquisition
+## Stage 1: Broad Competition Coverage
 
 For candidate-conditioned retrieval scores \(z_i(c_a)\), every local
 two-frame packet defines one facility vector
@@ -24,7 +24,7 @@ The feasible region, required timestamp contraction, 16-packet budget, and
 seven-decimal tie canonicalization are fixed. Selected physical frames are
 restored to chronological order before answer scoring.
 
-## Module II: Core-Preserving Nested Refinement
+## Stage 2: Focused Competition Resolution
 
 Let \(\pi\) be the frozen answerer's posterior on the 32-frame core. Remaining
 candidate frames are split into eight chronological partitions; each action
@@ -51,4 +51,3 @@ distributions:
 
 No gold answer, correctness signal, subtitle, ASR, captioner, external
 generative model, or target-dataset update enters evidence selection.
-

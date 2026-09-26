@@ -8,7 +8,8 @@ retrieval:
   generic_text: "Question: {question}"
   candidate_text: "Candidate answer: {choice}. Question: {question}"
 
-module_i:
+stage_1:
+  name: Broad Competition Coverage
   local_packet_size: 2
   local_packet_stride: 2
   packet_budget: 16
@@ -22,7 +23,8 @@ module_i:
     - earlier_packet_id
   short_video_fallback: all_available_candidate_frames
 
-module_ii:
+stage_2:
+  name: Focused Competition Resolution
   residual_action_count: 8
   frames_per_action: 4
   control_action: minimum_value_then_earliest_index
@@ -55,4 +57,3 @@ frozen_core_selection_set_hashes:
   videomme: 659c8c9eb39814388c540c2d0e46dbeafa3b9eae86248649c6abec55d6d0f690
   longvideobench: f97fc466ff43d4d188d4904022e981aec0f79fa60520d7d276dc824415c55817
   mlvu_dev: 0954cf4e8eb313aed749272d8a76a5e181a6aa5e789b10ae3d6db429e1382139
-

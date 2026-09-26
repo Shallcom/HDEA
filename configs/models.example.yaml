@@ -4,7 +4,7 @@ environment_variables:
   HDEA_INTERNVL3_MODEL: /path/to/InternVL3-8B-Instruct
   HDEA_MPLUGOWL3_MODEL: /path/to/mPLUG-Owl3-7B-241101
   HDEA_LLAVANEXT_ROOT: /path/to/LLaVA-NeXT
-  HDEA_LLAVANEXT_MODEL: /path/to/LLaVA-NeXT-Video-7B
+  HDEA_LLAVANEXT_MODEL: /path/to/LLaVA-Video-7B
   HDEA_LLAVANEXT_SIGLIP: /path/to/siglip-so400m-patch14-384
 
 frozen_interfaces:
@@ -23,4 +23,3 @@ frozen_interfaces:
     dtype: bfloat16
     frame_resolution: 384x384
     decision: final_state_option_logits
-
